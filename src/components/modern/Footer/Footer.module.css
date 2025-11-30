@@ -1,0 +1,163 @@
+.footer {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.column h3,
+.column h4 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.brandSection {
+    margin-bottom: 0.75rem;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.brand {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+
+.links,
+.contact {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: all var(--transition-base);
+}
+
+.links a:hover {
+    opacity: 1;
+    padding-left: 0.5rem;
+}
+
+.contact li {
+    opacity: 0.9;
+}
+
+/* Social Media Icons */
+.socialIcons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.socialIcon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    transition: all var(--transition-base);
+    text-decoration: none;
+}
+
+.socialIcon:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.socialIcon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.bottom {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    opacity: 0.8;
+}
+
+.bottom p {
+    margin: 0.5rem 0;
+}
+
+.craftedBy {
+    font-size: 0.95rem;
+    margin-top: 0.75rem !important;
+}
+
+.heart {
+    color: #ff6b6b;
+    display: inline-block;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.craftedLink {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.craftedLink:hover {
+    color: #ffd700;
+    text-decoration: underline;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    10%,
+    30% {
+        transform: scale(1.1);
+    }
+
+    20%,
+    40% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}

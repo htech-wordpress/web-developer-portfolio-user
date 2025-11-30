@@ -1,0 +1,147 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all var(--transition-base);
+}
+
+.header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brandSection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logoWrapper {
+    flex-shrink: 0;
+}
+
+.logoImage {
+    height: 50px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.brandText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+
+.brandTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.brandSubtitle {
+    font-size: 0.75rem;
+    color: var(--color-textLight);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.navLink {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    transition: color var(--transition-base);
+}
+
+.navLink:hover {
+    color: var(--color-primary);
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width var(--transition-base);
+}
+
+.navLink:hover::after {
+    width: 100%;
+}
+
+.mobileToggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobileToggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--color-text);
+    transition: all var(--transition-base);
+}
+
+@media (max-width: 768px) {
+    .nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-base);
+    }
+
+    .nav.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobileToggle {
+        display: flex;
+    }
+
+    .navLink {
+        font-size: 1.125rem;
+    }
+}

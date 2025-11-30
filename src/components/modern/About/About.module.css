@@ -1,0 +1,355 @@
+.about {
+    padding: clamp(2rem, 5vw, 3rem) 0;
+    background: #ffffff;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.03), 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 5vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* About Intro - Title & Description */
+.aboutIntro {
+    width: 100%;
+}
+
+/* Intro with Image Layout */
+.introWithImage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.introText {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    order: 1;
+}
+
+.introImageWrapper {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    order: 2;
+}
+
+.introImageWrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.introText {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Intro Text Only (centered, no image) */
+.introTextOnly {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.mainTitle {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+}
+
+.mainDescription {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-textLight);
+}
+
+/* Mission & Vision Section */
+.missionVisionSection {
+    width: 100%;
+}
+
+.aboutGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Left: Image */
+.aboutImageWrapper {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    min-height: 400px;
+}
+
+.aboutImageWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Right: Mission & Vision Container */
+.missionVisionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 100%;
+    justify-content: center;
+}
+
+.missionVisionContainer.fullWidth {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Mission/Vision Cards */
+.missionVisionCard {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.missionVisionCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.cardIcon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.cardContent h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.cardContent p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-textLight);
+}
+
+/* Fallback: Text Only (when no image) */
+.aboutTextOnly {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.aboutTextOnly .title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+}
+
+.aboutTextOnly .description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-textLight);
+}
+
+/* Component 3: Why Choose Us Section */
+.whyChooseSection {
+    width: 100%;
+}
+
+.whyChooseCard {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(245, 158, 11, 0.1));
+    border-radius: var(--radius-lg);
+    border-left: 4px solid #f59e0b;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.whyChooseCard:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.whyChooseCard .icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.whyChooseCard h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+}
+
+.whyChooseCard p {
+    color: var(--color-textLight);
+    line-height: 1.6;
+}
+
+/* Component 4: Core Values Section */
+.coreValuesSection {
+    width: 100%;
+}
+
+.valuesTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.valuesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.valueCard {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: var(--radius-xl);
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.valueCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.value {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.value:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.valueIcon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.value h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+}
+
+.value p {
+    color: var(--color-textLight);
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .introWithImage {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .aboutGrid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .aboutImageWrapper {
+        min-height: 300px;
+        max-height: 400px;
+    }
+
+    .valuesGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        gap: 3rem;
+    }
+
+    .introWithImage {
+        gap: 1.5rem;
+    }
+
+    .aboutImageWrapper {
+        min-height: 250px;
+    }
+
+    .missionVisionCard {
+        padding: 1.5rem;
+    }
+
+    .cardIcon {
+        font-size: 2.5rem;
+    }
+
+    .cardContent h3 {
+        font-size: 1.5rem;
+    }
+
+    .whyChooseCard {
+        padding: 1.5rem;
+    }
+
+    .whyChooseCard .icon {
+        font-size: 2rem;
+    }
+
+    .whyChooseCard h3 {
+        font-size: 1.25rem;
+    }
+
+    .valueCard,
+    .whyChooseCard {
+        padding: 1.5rem;
+    }
+
+    .valueCard .icon,
+    .whyChooseCard .icon {
+        font-size: 2rem;
+    }
+
+    .valueCard h3,
+    .whyChooseCard h3 {
+        font-size: 1.25rem;
+    }
+}

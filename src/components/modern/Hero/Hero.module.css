@@ -1,0 +1,230 @@
+.hero {
+    min-height: 85vh;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--gradient, linear-gradient(135deg, var(--color-primary), var(--color-secondary)));
+    width: 100%;
+}
+
+.background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.gradient {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient, linear-gradient(135deg, var(--color-primary), var(--color-secondary)));
+    opacity: 0.95;
+}
+
+.shapes {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.shape1,
+.shape2,
+.shape3 {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    animation: float 20s infinite ease-in-out;
+}
+
+.shape1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.shape2 {
+    width: 400px;
+    height: 400px;
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 5s;
+}
+
+.shape3 {
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    animation-delay: 10s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: clamp(6rem, 12vh, 10rem);
+    min-height: 85vh;
+}
+
+.content {
+    color: white;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.heading {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tagline {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    font-weight: 400;
+    opacity: 0.95;
+    margin-bottom: clamp(2.5rem, 5vh, 3.5rem);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: clamp(2rem, 4vh, 3rem);
+}
+
+.primaryBtn,
+.secondaryBtn {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: var(--radius-lg);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.primaryBtn {
+    background: white;
+    color: var(--color-primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.primaryBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.secondaryBtn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.secondaryBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.scrollIndicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    opacity: 0.8;
+}
+
+.mouse {
+    width: 24px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 12px;
+    position: relative;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background: white;
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(16px);
+    }
+}
+
+.scrollIndicator span {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 90vh;
+    }
+
+    .cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .primaryBtn,
+    .secondaryBtn {
+        width: 100%;
+    }
+}
